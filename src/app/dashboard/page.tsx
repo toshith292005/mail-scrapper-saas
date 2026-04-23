@@ -19,7 +19,7 @@ export default async function DashboardPage() {
   })
 
   const totalLeads = leads.length
-  const emailsVerified = leads.filter(l => l.score && l.score >= 0.8).length
+  const emailsVerified = leads.filter(l => (l.confidenceScore ?? 0) >= 0.8).length
   const domainsScanned = Array.from(new Set(leads.map(l => l.company).filter(Boolean))).length
   const emailsSent = 0 // Placeholder until email sending is implemented
 

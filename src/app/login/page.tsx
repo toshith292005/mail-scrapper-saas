@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { signIn } from "next-auth/react"
-import { Globe, Mail, Lock, ArrowRight, Github } from "lucide-react"
+import { Globe, Mail, Lock, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 

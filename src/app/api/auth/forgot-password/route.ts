@@ -47,7 +47,7 @@ export async function POST(req: Request) {
 
     // Setup nodemailer
     // If no real SMTP config is provided, we use a mock transporter that just logs to console
-    const transporter = nodemailer.createTransport(
+    const transporter = nodemailer.createTransport((
       process.env.SMTP_SERVER ? {
         host: process.env.SMTP_SERVER,
         port: parseInt(process.env.SMTP_PORT || '587'),
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         streamTransport: true,
         newline: 'windows'
       }
-    )
+    ) as any)
 
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'noreply@emailscrapper.io',
