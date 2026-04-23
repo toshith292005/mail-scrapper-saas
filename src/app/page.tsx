@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Globe } from "lucide-react"
+import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 export default function LandingPage() {
   return (
@@ -12,15 +13,7 @@ export default function LandingPage() {
           <span className="font-bold text-lg tracking-tight">Email Scrapper.io</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <Link className="text-sm font-medium hover:text-primary transition-colors" href="#">
-            Features
-          </Link>
-          <Link className="text-sm font-medium hover:text-primary transition-colors" href="#">
-            Pricing
-          </Link>
-          <Link className="text-sm font-medium hover:text-primary transition-colors" href="#">
-            About
-          </Link>
+          <ThemeToggle />
           <Link className="text-sm font-medium hover:text-primary transition-colors" href="/login">
             Login
           </Link>
@@ -61,14 +54,6 @@ export default function LandingPage() {
         <p className="text-xs text-muted-foreground">
           © 2026 Email Scrapper.io. All rights reserved.
         </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:text-foreground transition-colors text-muted-foreground" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:text-foreground transition-colors text-muted-foreground" href="#">
-            Privacy
-          </Link>
-        </nav>
       </footer>
     </div>
   )

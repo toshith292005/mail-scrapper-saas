@@ -4,6 +4,7 @@ import * as React from "react"
 import { useSession, signOut } from "next-auth/react"
 import { Bell, Menu, User, LogOut, Settings as SettingsIcon, Check, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   const [isProfileOpen, setIsProfileOpen] = React.useState(false)
@@ -56,6 +57,9 @@ export function Header() {
       <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
         <div className="flex flex-1"></div>
         <div className="flex items-center gap-x-4 lg:gap-x-6 relative">
+          
+          {/* Theme Toggle */}
+          <ThemeToggle />
           
           {/* Notifications dropdown */}
           <div className="relative">

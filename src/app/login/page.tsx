@@ -4,6 +4,7 @@ import * as React from "react"
 import { signIn } from "next-auth/react"
 import { Globe, Mail, Lock, ArrowRight, Github } from "lucide-react"
 import Link from "next/link"
+import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = React.useState(false)
@@ -44,6 +45,19 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+      {/* Back to Home Link */}
+      <Link 
+        href="/" 
+        className="absolute top-8 left-8 flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors z-20"
+      >
+        <ArrowRight className="h-4 w-4 rotate-180" />
+        Back to Home
+      </Link>
+
+      {/* Theme Toggle */}
+      <div className="absolute top-8 right-8 z-20">
+        <ThemeToggle />
+      </div>
       {/* Background glowing effects */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/20 blur-[120px] pointer-events-none" />
